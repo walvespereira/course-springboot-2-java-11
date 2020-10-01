@@ -55,6 +55,5 @@ public class CategoryResource {
 	public ResponseEntity<Category> update(@PathVariable Long id, @RequestBody Category obj) {
 		obj = service.update(id, obj);
 		return ResponseEntity.ok().body(obj);
-		
 	}
 }

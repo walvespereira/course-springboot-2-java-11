@@ -52,15 +52,12 @@ public class CategoryService {
 		updateData(entity, obj);
 		return repository.save(entity);
 		} catch (EntityNotFoundException e) {
-		
-			throw new ResourceNotFoundException (id);
+		  throw new ResourceNotFoundException (id);
 		}
 	}
 
 	private void updateData(Category entity, Category obj) {
-		entity.setName(obj.getName());
-		
-		
+		entity.setName(obj.getName());	
 	}
 
 }
