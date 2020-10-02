@@ -2,6 +2,8 @@ package com.educandoweb.course.dto;
 
 import java.io.Serializable;
 
+
+
 import com.educandoweb.course.entities.Product;
 
 public class ProductDTO implements Serializable {
