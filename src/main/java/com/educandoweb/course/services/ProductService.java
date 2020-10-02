@@ -1,14 +1,16 @@
 package com.educandoweb.course.services;
 
+
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 import javax.persistence.EntityNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,9 +33,9 @@ public class ProductService {
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
-	public List<ProductDTO> findAll() {
-		List<Product> list = repository.findAll();
-		return list.stream().map(e -> new ProductDTO(e)).collect(Collectors.toList());
+	public Page<ProductDTO> findAllPaged(Pageable pageable) {
+		Page<Product> list = repository.findAll(pageable);
+		return list.map(e -> new ProductDTO(e));
 	}
 	
 	public ProductDTO findById(Long id) {
