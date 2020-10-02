@@ -30,6 +30,7 @@ public class CategoryService {
 			return list.stream().map(e -> new CategoryDTO(e)).collect(Collectors.toList());
 	}
 	
+	@Transactional
 	public CategoryDTO findById(Long id) {
 		Optional <Category> obj = repository.findById(id);
 		Category entity = obj.orElseThrow(() -> new ResourceNotFoundException(id));
