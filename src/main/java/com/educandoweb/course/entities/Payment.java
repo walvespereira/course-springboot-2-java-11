@@ -11,7 +11,6 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -25,7 +24,7 @@ public class Payment implements Serializable {
 	private Long id;
 	private Instant moment;
 	
-	@JsonIgnore
+
 	@OneToOne
 	@MapsId
 	private Order order;

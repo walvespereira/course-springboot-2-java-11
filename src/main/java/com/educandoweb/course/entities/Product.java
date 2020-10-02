@@ -14,7 +14,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "tb_product")
@@ -95,7 +94,7 @@ public class Product implements Serializable {
 		return categories;
 	}
 	
-	@JsonIgnore
+	
 	public Set<Order> gertOrders(){
 		Set<Order> set = new HashSet<>();
 		for (OrderItem x: items) {
