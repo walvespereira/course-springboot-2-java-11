@@ -28,7 +28,7 @@ public class Category implements Serializable {
 	private Set<Product> products = new HashSet<>();
 
 	private Instant createdAt;
-	private Instant updateAt;
+	private Instant updatedAt;
 
 	public Category() {
 	}
@@ -64,7 +64,7 @@ public class Category implements Serializable {
 	}
 
 	public Instant getUpdateAt() {
-		return updateAt;
+		return updatedAt;
 	}
 
 	@PreUpdate
